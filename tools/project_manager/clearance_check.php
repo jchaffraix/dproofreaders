@@ -76,7 +76,8 @@ echo "</table>";
 
 //---------------------------------------------------------------------------
 
-function get_table_query_resource($username, $view_mode)
+/** @return mysqli_result|bool */
+function get_table_query_resource(string $username, string $view_mode)
 {
     $sql = "
         SELECT projectid, nameofwork, authorsname, username, state, clearance
