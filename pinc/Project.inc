@@ -1985,7 +1985,7 @@ function does_project_page_table_exist($projectid)
 /**
  * Confirm that $projectid is a well-formed project ID or raise an exception.
  */
-function validate_projectID($projectid)
+function validate_projectID(string $projectid): void
 {
     if (1 != preg_match('/^projectID[0-9a-f]{13}$/', $projectid)) {
         throw new InvalidProjectIDException(sprintf(
@@ -2001,7 +2001,7 @@ function validate_projectID($projectid)
  *
  * This function mirrors the other get_*() functions in `misc.inc`.
  */
-function get_projectID_param($arr, $key, $allownull = false)
+function get_projectID_param(array $arr, string $key, bool $allownull = false): ?string
 {
     $projectid = @$arr[$key];
 
@@ -2031,7 +2031,7 @@ function get_projectID_param($arr, $key, $allownull = false)
 /**
  * Validate that $page_name is a well-formed page filename or raise an exception.
  */
-function validate_page_image($page_name)
+function validate_page_image(string $page_name): void
 {
     if (1 != preg_match('/^[a-zA-Z0-9_.-]{5,16}$/', $page_name)) {
         throw new InvalidPageException(sprintf(
@@ -2047,7 +2047,7 @@ function validate_page_image($page_name)
  *
  * This function mirrors the other get_*() functions in `misc.inc`.
  */
-function get_page_image_param($arr, $key, $allownull = false)
+function get_page_image_param(array $arr, string $key, bool $allownull = false): ?string
 {
     $page_name = @$arr[$key];
 

@@ -543,7 +543,7 @@ class ProjectInfoHolder
         }
     }
 
-    public function row($label, $display_function, $field_value, $field_name = null, $explain = '', $args = '', $html_label = false)
+    public function row(string $label, callable $display_function, mixed $field_value, mixed $field_name = null, string $explain = '', mixed $args = '', bool $html_label = false)
     {
         echo "<tr>";
         echo   "<th class='label'>";
